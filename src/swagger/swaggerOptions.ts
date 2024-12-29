@@ -11,7 +11,7 @@ export const swaggerOptions: SwaggerOptions = {
     },
     servers: [
       {
-        url: `http://localhost:${process.env.PORT || 3000}`,
+        url: `${process.env.DEPLOY_URL || "http://localhost:3000"}`,
       },
     ],
     paths: tasksSwaggerDocs,
