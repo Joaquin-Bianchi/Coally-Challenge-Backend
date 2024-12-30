@@ -1,7 +1,7 @@
 ![image](https://github.com/user-attachments/assets/df2fc5c1-34f5-4b47-baf9-b015683e39ad)
 # Coally Challenge "Backend"
 
-### Este es el repositorio del backend. Ver [reposiotrio](https://github.com/Joaquin-Bianchi/Coally-Challenge-Frontend) del Frontend
+### Este es el repositorio del backend. Ver [repositorio](https://github.com/Joaquin-Bianchi/Coally-Challenge-Frontend) del Frontend
 
 Demo: https://coally-challenge-backend-production.up.railway.app/api-docs/
 
