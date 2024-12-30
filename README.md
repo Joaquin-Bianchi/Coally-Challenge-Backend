@@ -7,7 +7,7 @@ Demo: https://coally-challenge-backend-production.up.railway.app/api-docs/
 
 ## Tecnologías
 
-- Node.js, TypeScript, Express para manejo de las peticiones, y MongoDB como base de datos.
+- Node.js, TypeScript, Express para manejo de las peticiones MongoDB como base de datos y Swagger para la documentacion de la api.
 
 ## Instalación
 
