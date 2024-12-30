@@ -3,6 +3,7 @@ const tasksSwaggerDocs = {
     post: {
       summary: "Create a new task",
       tags: ["Tasks"],
+      security: [{ bearerAuth: [] }],
       requestBody: {
         required: true,
         content: {
@@ -32,6 +33,8 @@ const tasksSwaggerDocs = {
                   id: { type: "string" },
                   title: { type: "string" },
                   description: { type: "string" },
+                  completed: { type: "boolean" },
+                  createdAt: { type: "string", format: "date-time" },
                 },
               },
             },
@@ -59,11 +62,25 @@ const tasksSwaggerDocs = {
             },
           },
         },
+        401: {
+          description: "Unauthorized - Invalid or missing token",
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                properties: {
+                  error: { type: "string" },
+                },
+              },
+            },
+          },
+        },
       },
     },
     get: {
       summary: "Get all tasks",
       tags: ["Tasks"],
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           in: "query",
@@ -90,6 +107,7 @@ const tasksSwaggerDocs = {
                     title: { type: "string" },
                     description: { type: "string" },
                     completed: { type: "boolean" },
+                    createdAt: { type: "string", format: "date-time" },
                   },
                 },
               },
@@ -97,6 +115,7 @@ const tasksSwaggerDocs = {
           },
         },
         400: { description: "Invalid status parameter" },
+        401: { description: "Unauthorized - Invalid or missing token" },
       },
     },
   },
@@ -104,6 +123,7 @@ const tasksSwaggerDocs = {
     get: {
       summary: "Get a task by ID",
       tags: ["Tasks"],
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           in: "path",
@@ -125,17 +145,20 @@ const tasksSwaggerDocs = {
                   title: { type: "string" },
                   description: { type: "string" },
                   completed: { type: "boolean" },
+                  createdAt: { type: "string", format: "date-time" },
                 },
               },
             },
           },
         },
+        401: { description: "Unauthorized - Invalid or missing token" },
         404: { description: "Task not found" },
       },
     },
     put: {
       summary: "Update a task",
       tags: ["Tasks"],
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           in: "path",
@@ -181,18 +204,21 @@ const tasksSwaggerDocs = {
                   title: { type: "string" },
                   description: { type: "string" },
                   completed: { type: "boolean" },
+                  createdAt: { type: "string", format: "date-time" },
                 },
               },
             },
           },
         },
         400: { description: "Validation Error" },
+        401: { description: "Unauthorized - Invalid or missing token" },
         404: { description: "Task not found" },
       },
     },
     delete: {
       summary: "Delete a task",
       tags: ["Tasks"],
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           in: "path",
@@ -204,6 +230,7 @@ const tasksSwaggerDocs = {
       ],
       responses: {
         204: { description: "Task deleted successfully" },
+        401: { description: "Unauthorized - Invalid or missing token" },
         404: { description: "Task not found" },
       },
     },
