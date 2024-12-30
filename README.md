@@ -15,3 +15,4 @@ Demo: https://coally-challenge-backend-production.up.railway.app/api-docs/
 2. Instalar las dependencias `bash npm install`
 3. Cambiar nombre del archivo .env.template a .env y remplazar las variables de entorno
 4. iniciar la aplicacion `npm run dev`
+5. Probar enpoints http://localhost:3000/api-docs
